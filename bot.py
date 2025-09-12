@@ -266,17 +266,29 @@ async def cmd_juknis(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("📑 Pilih Juknis Aplikasi:", reply_markup=InlineKeyboardMarkup(keyboard))
     
 
+# async def cmd_help(update: Update, context: ContextTypes.DEFAULT_TYPE):
+#     msg = (
+#         "ℹ️ Bantuan:\n"
+#         "• /start — buka menu utama\n"
+#         "• /formatsurat — pilih kategori & unduh surat\n"
+#         "• /faq — lihat pertanyaan umum\n"
+#         "• /juknis — buka juknis aplikasi\n"
+#         "• /help — bantuan penggunaan bot\n"
+#         "• Ketik kata kunci untuk mencari file (contoh: *pengajuan up*)"
+#     )
+#     await update.message.reply_text(msg, parse_mode="Markdown")
+
 async def cmd_help(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = (
-        "ℹ️ Bantuan:\n"
-        "• /start — buka menu utama\n"
-        "• /formatsurat — pilih kategori & unduh surat\n"
-        "• /faq — lihat pertanyaan umum\n"
-        "• /juknis — buka juknis aplikasi\n"
-        "• /help — bantuan penggunaan bot\n"
-        "• Ketik kata kunci untuk mencari file (contoh: *pengajuan up*)"
+        "☎️ *Contact Center — Hai DJPb*\n\n"
+        "Jika membutuhkan bantuan lebih lanjut, hubungi:\n\n"
+        "• 📱 *WhatsApp*: +62 878-7711-4090\n"
+        "• 🌐 *Website*: https://hai.kemenkeu.go.id/\n"
+        "• ✉️ *Email*: hai.djpb@kemenkeu.go.id\n\n"
+        "_Silakan pilih kanal yang paling nyaman untuk Anda._"
     )
     await update.message.reply_text(msg, parse_mode="Markdown")
+
 
 # ========= HELPER: SEND GLOSARIUM =========
 async def send_glosarium_page(message, page: int):
