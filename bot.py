@@ -116,6 +116,7 @@ def kb_start():
             InlineKeyboardButton("📚 Glosarium", callback_data="menu_glosarium"),
             InlineKeyboardButton("📑 Juknis Aplikasi", callback_data="menu_juknis"),
         ]
+        [   InlineKeyboardButton("☎️ Contact Center", callback_data="menu_contact")]
     ])
 
 def kb_kategori():
@@ -328,7 +329,17 @@ async def on_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
             [InlineKeyboardButton("⬅️ Kembali", callback_data="back_to_start")]
         ]
         await query.message.reply_text("📑 Pilih Kategori FAQ:", reply_markup=InlineKeyboardMarkup(keyboard))
-
+    
+    elif data == "menu_contact":
+        msg = (
+            "☎️ *Contact Center — Hai DJPb*\n\n"
+            "Jika membutuhkan bantuan lebih lanjut, hubungi:\n\n"
+            "• 📱 *WhatsApp*: +62 878-7711-4090\n"
+            "• 🌐 *Website*: https://hai.kemenkeu.go.id/\n"
+            "• ✉️ *Email*: hai.djpb@kemenkeu.go.id\n\n"
+            "_Silakan pilih kanal yang paling nyaman untuk Anda._"
+        )
+        await query.message.reply_text(msg, parse_mode="Markdown")
 
     elif data == "menu_glosarium":
         await send_glosarium_page(query.message, 0)
