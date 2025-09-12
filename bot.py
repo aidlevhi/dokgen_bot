@@ -106,6 +106,19 @@ def search_files(keyword):
                 results.append((kategori, filename))
     return results
 
+# def kb_start():
+#     return InlineKeyboardMarkup([
+#         [
+#             InlineKeyboardButton("📄 Format Surat", callback_data="menu_formatsurat"),
+#             InlineKeyboardButton("❓ FAQ", callback_data="menu_faq"),
+#         ],
+#         [
+#             InlineKeyboardButton("📚 Glosarium", callback_data="menu_glosarium"),
+#             InlineKeyboardButton("📑 Juknis Aplikasi", callback_data="menu_juknis"),
+#         ]
+#         [   InlineKeyboardButton("☎️ Contact Center", callback_data="menu_contact")]
+#     ])
+
 def kb_start():
     return InlineKeyboardMarkup([
         [
@@ -115,8 +128,10 @@ def kb_start():
         [
             InlineKeyboardButton("📚 Glosarium", callback_data="menu_glosarium"),
             InlineKeyboardButton("📑 Juknis Aplikasi", callback_data="menu_juknis"),
+        ],
+        [
+            InlineKeyboardButton("☎️ Contact Center", callback_data="menu_contact"),
         ]
-        [   InlineKeyboardButton("☎️ Contact Center", callback_data="menu_contact")]
     ])
 
 def kb_kategori():
