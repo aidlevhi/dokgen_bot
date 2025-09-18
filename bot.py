@@ -82,14 +82,14 @@ GLOSARIUM = {
 # ====== KONFIGURASI GOOGLE SHEETS ======
 SCOPE = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 
-# Ambil credentials dari Railway env var
-creds_json = os.getenv("GOOGLE_CREDENTIALS")
-if not creds_json:
-    raise ValueError("❌ GOOGLE_CREDENTIALS env var not found!")
+# # Ambil credentials dari Railway env var
+# creds_json = os.getenv("GOOGLE_CREDENTIALS")
+# if not creds_json:
+#     raise ValueError("❌ GOOGLE_CREDENTIALS env var not found!")
 
-creds_dict = json.loads(creds_json)
-CREDS = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, SCOPE)
-client = gspread.authorize(CREDS)
+# creds_dict = json.loads(creds_json)
+# CREDS = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, SCOPE)
+# client = gspread.authorize(CREDS)
 
 # Ganti dengan ID Spreadsheet kamu (lihat di URL Google Sheet)
 SHEET_ID = "1U-FPjz55HFt6p7KeGQI14ZifScBvcEYnPw8fx-IjiCk"
