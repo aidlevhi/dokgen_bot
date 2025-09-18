@@ -106,8 +106,7 @@ def log_usage(user_id, username, action):
 # ========= CONTOH PEMAKAIAN =========
 if __name__ == "__main__":
     log_usage("123456", "test_user", "Coba klik button")
-
-
+    
 
 # ========= UTIL & DATA LOADER =========
 def ensure_base_dir():
