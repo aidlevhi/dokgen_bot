@@ -1,15 +1,15 @@
 
 import os
 import csv
-import json
-import gspread
+# import json
+# import gspread
 from datetime import datetime
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import (
     Application, CommandHandler, MessageHandler,
     ContextTypes, CallbackQueryHandler, filters
 )
-from oauth2client.service_account import ServiceAccountCredentials
+# from oauth2client.service_account import ServiceAccountCredentials
 from datetime import datetime
 
 # ========= KONFIGURASI =========
@@ -74,13 +74,13 @@ GLOSARIUM = {
 }
 
 # # ========= LOGGER KE CSV =========
-# def log_usage(user_id, username, action):
-#     with open("traffic_log.csv", "a", newline="", encoding="utf-8") as f:
-#         writer = csv.writer(f)
-#         writer.writerow([datetime.now().strftime("%Y-%m-%d %H:%M:%S"), user_id, username, action])
+def log_usage(user_id, username, action):
+    with open("traffic_log.csv", "a", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow([datetime.now().strftime("%Y-%m-%d %H:%M:%S"), user_id, username, action])
 
 # ====== KONFIGURASI GOOGLE SHEETS ======
-SCOPE = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+# SCOPE = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 
 # Ambil credentials dari Railway env var
 # creds_json = {
@@ -109,10 +109,10 @@ SCOPE = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/au
 # sheet = client.open_by_key(SHEET_ID).sheet1
 
 # ====== FUNGSI LOGGING ======
-def log_usage(user_id, username, action):
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    sheet.append_row([timestamp, user_id, username, action])
-    print(f"✅ Logged: {timestamp}, {user_id}, {username}, {action}")
+# def log_usage(user_id, username, action):
+#     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+#     sheet.append_row([timestamp, user_id, username, action])
+#     print(f"✅ Logged: {timestamp}, {user_id}, {username}, {action}")
 
 
 # ========= UTIL & DATA LOADER =========
