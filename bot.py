@@ -84,6 +84,9 @@ SCOPE = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/au
 
 # Ambil credentials dari Railway env var
 creds_json = os.getenv("GOOGLE_CREDENTIALS")
+if not creds_json:
+    raise ValueError("❌ GOOGLE_CREDENTIALS env var not found!")
+
 creds_dict = json.loads(creds_json)
 CREDS = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, SCOPE)
 client = gspread.authorize(CREDS)
