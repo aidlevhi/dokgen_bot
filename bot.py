@@ -83,30 +83,30 @@ GLOSARIUM = {
 SCOPE = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 
 # Ambil credentials dari Railway env var
-creds_json = {
-  "type": "service_account",
-  "project_id": "banded-elevator-472502-s1",
-  "private_key_id": "b3bb73eb158f1c964c56c9374edf793d13c02983",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCoT116ZdPqx66M\nIqBcBMC2E1WWHDCzNSTa0ow8Fd7K44mK/o0nGi8NWC1luJDXP1rmxu1HDj1tiwoP\nrFjeljUtVewdjjmbingknPcCMWptYB0k/4dxzIvvU3F5DR0vVwwrYbIN/ydFrmLn\nWt+rIoi6OK/H+2rAu+uu2DCtKg6UWwNkhy+NUNZWMz8DuFDYf3SmrtYj6fBKiwb7\nG9/ueKDvu2MrHdTSS3RAqVFrOQeRnOBQYOxdccpjaR9x/MFkGSyu3gd0s6JdlbLS\n362BsmVp4H3abT/0fgRvps6iRldSz7JkOGYLUWnUpnEGiCaGq5B1xNEAde90h0pg\nIjhaea5zAgMBAAECggEAEsnpUYSUh50K6zHiXONa7/hwkXVMKnVAS/09EmgOmu+T\npySLdVYC8qZpSvWzlZPI/gIu8sOwL85ZrS48LXzvKsRwu0vpOmfWyZ+MI36ItvUH\ny92KrTV8WZcjD7RbEbHR9fXN/qoBJFI3UERgu6X7RW6WkOiMHj/cK4SOyoXrYrwn\nzR1h7YvKAafE5mizpMBk9HEislfkQs4xZDVd2c++bmWnZ0/oC3GX04RQCXUMVIBm\nPxD7IMBRwNswjoph1VvtvkCZoCrzTlm5R08US3qHVrRGe7QW2wmOSRpcvrsJZhSo\npm4+0zG/MR5W93+r/S0Lmgszw9/3F1prkr3QLYc54QKBgQDeMR2RcTDchKnNpxne\nJDAahpQneXNy+j2QFVetRTiNQn4yNTP2adSW7090hWoou3NsCKge7kfLwCwLCx0J\nu11bCviOyDdErj04q7I7d8zmxLVUKe2K4MaQw2ZUStlm3k5rapbeQ/Smy4ROjhx8\nmtExDhgSKX9BESaeYkTqhNX75QKBgQDB622R+F+JX9JGvEzqU0+2VaN124AyMmdZ\n+vHlJee/wu5To388fR9FRknsF5kzUpE2tppaUhH4/3GobTWk6Z3luBwQF2aMqxxN\n4yQU3ve7WQo6oFAHaIW3mpfkidJFYEcYZd1AoAL1moFzBvRt/FU8lcQOg2mhZSTx\ng8O6VQfLdwKBgB896rlroAIxySp4h4ObtQPVznkqc5hEJWngBl7/r671HYdzwaWx\nRcofRh3NMJsfmGAla3ZF7ORyVf8Lhf67UKofhcmVz2eh1EvmoH4KH06HdDOsXZE8\nf88VGotZpu327jHeX+5Kwdi+HxFonArNPgLWx32uRg1hGvwEN0p+eRQdAoGANYMn\nMGHO01Tq7PQncX5d/93wBqT04mVAWfdC604jfqpnJBN5GBMbHv2/hnQYpa4CPovz\nWjtNlF3BWo4QgJqrJOpCbDpY5TaOz/t/SHci+8MdbIIys2inhbwWcE2MBfMEi3oI\nrT26s1XYpQplRzibuOVHPg4LhysnH7KRv4iZZw8CgYBlHYkYwrzoxiK8EheDlvXw\nqg/pAq21ovMmnxvJ9ec1K7VH0TgLLZfwZNMGqngtekdH5oNKRjpEm7LX7Us58FZm\nW/5gjAtlU2VYZVgSO8X5gc9++EKelQzMsm9sgUSD9ux6ImtH7F12u42YzWMEAXgb\n+rGCh4t/JdetpIL65LBp0A==\n-----END PRIVATE KEY-----\n",
-  "client_email": "dokgen@banded-elevator-472502-s1.iam.gserviceaccount.com",
-  "client_id": "115208748227372799551",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dokgen%40banded-elevator-472502-s1.iam.gserviceaccount.com",
-  "universe_domain": "googleapis.com"
-}
+# creds_json = {
+#   "type": "service_account",
+#   "project_id": "banded-elevator-472502-s1",
+#   "private_key_id": "b3bb73eb158f1c964c56c9374edf793d13c02983",
+#   "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCoT116ZdPqx66M\nIqBcBMC2E1WWHDCzNSTa0ow8Fd7K44mK/o0nGi8NWC1luJDXP1rmxu1HDj1tiwoP\nrFjeljUtVewdjjmbingknPcCMWptYB0k/4dxzIvvU3F5DR0vVwwrYbIN/ydFrmLn\nWt+rIoi6OK/H+2rAu+uu2DCtKg6UWwNkhy+NUNZWMz8DuFDYf3SmrtYj6fBKiwb7\nG9/ueKDvu2MrHdTSS3RAqVFrOQeRnOBQYOxdccpjaR9x/MFkGSyu3gd0s6JdlbLS\n362BsmVp4H3abT/0fgRvps6iRldSz7JkOGYLUWnUpnEGiCaGq5B1xNEAde90h0pg\nIjhaea5zAgMBAAECggEAEsnpUYSUh50K6zHiXONa7/hwkXVMKnVAS/09EmgOmu+T\npySLdVYC8qZpSvWzlZPI/gIu8sOwL85ZrS48LXzvKsRwu0vpOmfWyZ+MI36ItvUH\ny92KrTV8WZcjD7RbEbHR9fXN/qoBJFI3UERgu6X7RW6WkOiMHj/cK4SOyoXrYrwn\nzR1h7YvKAafE5mizpMBk9HEislfkQs4xZDVd2c++bmWnZ0/oC3GX04RQCXUMVIBm\nPxD7IMBRwNswjoph1VvtvkCZoCrzTlm5R08US3qHVrRGe7QW2wmOSRpcvrsJZhSo\npm4+0zG/MR5W93+r/S0Lmgszw9/3F1prkr3QLYc54QKBgQDeMR2RcTDchKnNpxne\nJDAahpQneXNy+j2QFVetRTiNQn4yNTP2adSW7090hWoou3NsCKge7kfLwCwLCx0J\nu11bCviOyDdErj04q7I7d8zmxLVUKe2K4MaQw2ZUStlm3k5rapbeQ/Smy4ROjhx8\nmtExDhgSKX9BESaeYkTqhNX75QKBgQDB622R+F+JX9JGvEzqU0+2VaN124AyMmdZ\n+vHlJee/wu5To388fR9FRknsF5kzUpE2tppaUhH4/3GobTWk6Z3luBwQF2aMqxxN\n4yQU3ve7WQo6oFAHaIW3mpfkidJFYEcYZd1AoAL1moFzBvRt/FU8lcQOg2mhZSTx\ng8O6VQfLdwKBgB896rlroAIxySp4h4ObtQPVznkqc5hEJWngBl7/r671HYdzwaWx\nRcofRh3NMJsfmGAla3ZF7ORyVf8Lhf67UKofhcmVz2eh1EvmoH4KH06HdDOsXZE8\nf88VGotZpu327jHeX+5Kwdi+HxFonArNPgLWx32uRg1hGvwEN0p+eRQdAoGANYMn\nMGHO01Tq7PQncX5d/93wBqT04mVAWfdC604jfqpnJBN5GBMbHv2/hnQYpa4CPovz\nWjtNlF3BWo4QgJqrJOpCbDpY5TaOz/t/SHci+8MdbIIys2inhbwWcE2MBfMEi3oI\nrT26s1XYpQplRzibuOVHPg4LhysnH7KRv4iZZw8CgYBlHYkYwrzoxiK8EheDlvXw\nqg/pAq21ovMmnxvJ9ec1K7VH0TgLLZfwZNMGqngtekdH5oNKRjpEm7LX7Us58FZm\nW/5gjAtlU2VYZVgSO8X5gc9++EKelQzMsm9sgUSD9ux6ImtH7F12u42YzWMEAXgb\n+rGCh4t/JdetpIL65LBp0A==\n-----END PRIVATE KEY-----\n",
+#   "client_email": "dokgen@banded-elevator-472502-s1.iam.gserviceaccount.com",
+#   "client_id": "115208748227372799551",
+#   "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+#   "token_uri": "https://oauth2.googleapis.com/token",
+#   "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+#   "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dokgen%40banded-elevator-472502-s1.iam.gserviceaccount.com",
+#   "universe_domain": "googleapis.com"
+# }
 
-if not creds_json:
-    raise ValueError("❌ GOOGLE_CREDENTIALS env var not found!")
+# if not creds_json:
+#     raise ValueError("❌ GOOGLE_CREDENTIALS env var not found!")
 
-creds_dict = json.loads(creds_json)
-CREDS = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, SCOPE)
-client = gspread.authorize(CREDS)
+# creds_dict = json.loads(creds_json)
+# CREDS = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, SCOPE)
+# client = gspread.authorize(CREDS)
 
-# Ganti dengan ID Spreadsheet kamu (lihat di URL Google Sheet)
-SHEET_ID = "1U-FPjz55HFt6p7KeGQI14ZifScBvcEYnPw8fx-IjiCk"
-sheet = client.open_by_key(SHEET_ID).sheet1
+# # Ganti dengan ID Spreadsheet kamu (lihat di URL Google Sheet)
+# SHEET_ID = "1U-FPjz55HFt6p7KeGQI14ZifScBvcEYnPw8fx-IjiCk"
+# sheet = client.open_by_key(SHEET_ID).sheet1
 
 # ====== FUNGSI LOGGING ======
 def log_usage(user_id, username, action):
