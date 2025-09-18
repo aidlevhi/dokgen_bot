@@ -75,38 +75,7 @@ def log_usage(user_id, username, action):
         writer = csv.writer(f)
         writer.writerow([datetime.now().strftime("%Y-%m-%d %H:%M:%S"), user_id, username, action])
 
-import os
-import base64
-import json
-import gspread
-from datetime import datetime
-from google.oauth2.service_account import Credentials
 
-# ========= GOOGLE SHEETS SETUP =========
-SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
-SHEET_ID = os.getenv("SHEET_ID")  
-CREDS_B64 = os.getenv("GOOGLE_CREDENTIALS_B64")  
-
-# Decode credentials dari env var
-creds_json = base64.b64decode(CREDS_B64).decode("utf-8")
-creds_dict = json.loads(creds_json)
-creds = Credentials.from_service_account_info(creds_dict, scopes=SCOPES)
-
-# Authorize client gspread
-client = gspread.authorize(creds)
-sheet = client.open_by_key(SHEET_ID).sheet1  # akses sheet pertama
-
-# ========= LOGGER KE GOOGLE SHEETS =========
-def log_usage(user_id, username, action):
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    row = [timestamp, user_id, username, action]
-    sheet.append_row(row)  # langsung nambah data ke bawah
-    print(f"✅ Logged to Google Sheets: {row}")
-
-# ========= CONTOH PEMAKAIAN =========
-if __name__ == "__main__":
-    log_usage("123456", "test_user", "Coba klik button")
-    
 
 # ========= UTIL & DATA LOADER =========
 def ensure_base_dir():
