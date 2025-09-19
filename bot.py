@@ -1,8 +1,8 @@
 
 import os
-import csv
-import asyncio
-import asyncpg
+# import csv
+# import asyncio
+# import asyncpg
 from datetime import datetime
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import (
@@ -77,59 +77,59 @@ GLOSARIUM = {
 #         writer = csv.writer(f)
 #         writer.writerow([datetime.now().strftime("%Y-%m-%d %H:%M:%S"), user_id, username, action])
 
-# ========== PostgreSQL Setup ==========
-DB_URL = os.getenv("DATABASE_URL")
+# # ========== PostgreSQL Setup ==========
+# DB_URL = os.getenv("DATABASE_URL")
 
-if not DB_URL:
-    raise ValueError("❌ DATABASE_URL tidak ditemukan. Pastikan sudah diset di Railway Env Var.")
-else:
-    print(f"✅ DATABASE_URL ke-load: {DB_URL}")
+# if not DB_URL:
+#     raise ValueError("❌ DATABASE_URL tidak ditemukan. Pastikan sudah diset di Railway Env Var.")
+# else:
+#     print(f"✅ DATABASE_URL ke-load: {DB_URL}")
 
-async def init_db():
-    conn = await asyncpg.connect(DB_URL)
-    await conn.execute("""
-    CREATE TABLE IF NOT EXISTS logs (
-        id SERIAL PRIMARY KEY,
-        user_id BIGINT,
-        username TEXT,
-        action TEXT,
-        timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    )
-    """)
-    await conn.close()
+# async def init_db():
+#     conn = await asyncpg.connect(DB_URL)
+#     await conn.execute("""
+#     CREATE TABLE IF NOT EXISTS logs (
+#         id SERIAL PRIMARY KEY,
+#         user_id BIGINT,
+#         username TEXT,
+#         action TEXT,
+#         timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+#     )
+#     """)
+#     await conn.close()
 
-async def log_usage(user_id, username, action):
-    conn = await asyncpg.connect(DB_URL)
-    await conn.execute(
-        "INSERT INTO logs (user_id, username, action, timestamp) VALUES ($1, $2, $3, $4)",
-        user_id, username, action, datetime.now()
-    )
-    await conn.close()
+# async def log_usage(user_id, username, action):
+#     conn = await asyncpg.connect(DB_URL)
+#     await conn.execute(
+#         "INSERT INTO logs (user_id, username, action, timestamp) VALUES ($1, $2, $3, $4)",
+#         user_id, username, action, datetime.now()
+#     )
+#     await conn.close()
 
-# ========== Handler ==========
-async def cmd_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await log_usage(update.effective_user.id, update.effective_user.username, "Start bot")
-    await update.message.reply_text("Halo, selamat datang di Dokgen Bot 👋")
+# # ========== Handler ==========
+# async def cmd_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+#     await log_usage(update.effective_user.id, update.effective_user.username, "Start bot")
+#     await update.message.reply_text("Halo, selamat datang di Dokgen Bot 👋")
 
-async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    query = update.callback_query
-    await log_usage(query.from_user.id, query.from_user.username, f"Klik tombol: {query.data}")
-    await query.answer("Tercatat ✅")
+# async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
+#     query = update.callback_query
+#     await log_usage(query.from_user.id, query.from_user.username, f"Klik tombol: {query.data}")
+#     await query.answer("Tercatat ✅")
 
-# ========== Main ==========
-def main():
-    app = Application.builder().token(BOT_TOKEN).build()
+# # ========== Main ==========
+# def main():
+#     app = Application.builder().token(BOT_TOKEN).build()
 
-    app.add_handler(CommandHandler("start", cmd_start))
-    app.add_handler(CallbackQueryHandler(button_handler))
-    # Tambahin handler lain di sini...
+#     app.add_handler(CommandHandler("start", cmd_start))
+#     app.add_handler(CallbackQueryHandler(button_handler))
+#     # Tambahin handler lain di sini...
 
-    print("✅ Bot Telegram sedang berjalan...")
-    app.run_polling()
+#     print("✅ Bot Telegram sedang berjalan...")
+#     app.run_polling()
 
-if __name__ == "__main__":
-    asyncio.run(init_db())   # bikin tabel kalau belum ada
-    main()
+# if __name__ == "__main__":
+#     asyncio.run(init_db())   # bikin tabel kalau belum ada
+#     main()
 
 # ========= UTIL & DATA LOADER =========
 def ensure_base_dir():
@@ -358,7 +358,7 @@ async def on_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     data = query.data
     user = query.from_user
-    log_usage(user.id, user.username or "-", f"Tombol: {data}")
+    # log_usage(user.id, user.username or "-", f"Tombol: {data}")
 
 
     if data == "menu_formatsurat":
