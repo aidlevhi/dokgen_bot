@@ -71,15 +71,14 @@ GLOSARIUM = {
     "UAKPB": "Unit Akuntansi Kuasa Pengguna Barang, unit akuntansi pengguna barang milik negara.",
 }
 
-# # ========= LOGGER KE CSV =========
-def log_usage(user_id, username, action):
-    with open("traffic_log.csv", "a", newline="", encoding="utf-8") as f:
-        writer = csv.writer(f)
-        writer.writerow([datetime.now().strftime("%Y-%m-%d %H:%M:%S"), user_id, username, action])
+# # # ========= LOGGER KE CSV =========
+# def log_usage(user_id, username, action):
+#     with open("traffic_log.csv", "a", newline="", encoding="utf-8") as f:
+#         writer = csv.writer(f)
+#         writer.writerow([datetime.now().strftime("%Y-%m-%d %H:%M:%S"), user_id, username, action])
 
 # ========== PostgreSQL Setup ==========
-DB_URL = os.getenv("DATABASE_URLpostgresql://postgres:uSyCnunzgygtRjRNoirduwodVTjwPVXS@postgres.railway.internal:5432/railway")
-
+DB_URL = os.getenv("postgresql://postgres:uSyCnunzgygtRjRNoirduwodVTjwPVXS@postgres.railway.internal:5432/railway")
 
 async def init_db():
     conn = await asyncpg.connect(DB_URL)
