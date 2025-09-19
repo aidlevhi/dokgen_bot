@@ -78,7 +78,12 @@ GLOSARIUM = {
 #         writer.writerow([datetime.now().strftime("%Y-%m-%d %H:%M:%S"), user_id, username, action])
 
 # ========== PostgreSQL Setup ==========
-DB_URL = os.getenv("postgresql://postgres:uSyCnunzgygtRjRNoirduwodVTjwPVXS@postgres.railway.internal:5432/railway")
+DB_URL = os.getenv("DATABASE_URL")
+
+if not DB_URL:
+    raise ValueError("❌ DATABASE_URL tidak ditemukan. Pastikan sudah diset di Railway Env Var.")
+else:
+    print(f"✅ DATABASE_URL ke-load: {DB_URL}")
 
 async def init_db():
     conn = await asyncpg.connect(DB_URL)
